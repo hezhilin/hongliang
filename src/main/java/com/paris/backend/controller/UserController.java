@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.paris.backend.model.Device;
 import com.paris.backend.model.Organization;
 import com.paris.backend.model.Role;
 import com.paris.backend.model.User;
