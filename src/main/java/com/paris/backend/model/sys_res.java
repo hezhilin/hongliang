@@ -1,5 +1,7 @@
 package com.paris.backend.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 
 /**
@@ -10,7 +12,8 @@ import javax.persistence.*;
 public class sys_res {
     @Id
     @Column(name = "res_id")
-    private int id;
+    @Length(min = 1,max=36)
+    private String id;
 
     @Column(name = "res_code")
     private String res_code;
@@ -31,16 +34,17 @@ public class sys_res {
     private String res_state;
 
     @Column(name = "par_id")
+    @Length(min=1,max = 36)
     private String par_id;
 
     public sys_res() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
