@@ -1,13 +1,18 @@
 package com.paris.backend.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/9/15 0015.
  */
 @Entity
-@Table(name = "sys_res")
-public class sys_res {
+@Table(name = "menu")
+public class Menu {
+    @Expose
     @Id
     @Column(name = "res_id")
     private int id;
@@ -15,9 +20,11 @@ public class sys_res {
     @Column(name = "res_code")
     private String res_code;
 
+    @Expose
     @Column(name = "res_name")
     private String res_name;
 
+    @Expose
     @Column(name = "res_url")
     private String res_url;
 
@@ -31,9 +38,26 @@ public class sys_res {
     private String res_state;
 
     @Column(name = "par_id")
-    private String par_id;
+    private int par_id;
 
-    public sys_res() {
+    public Menu() {
+    }
+
+    @Expose
+    @Transient
+    private List<Menu> childs = new ArrayList<Menu>();
+
+    public List<Menu> getChilds() {
+        return childs;
+    }
+
+    public void addChild(Menu child) {
+
+        this.childs.add(child)  ;
+    }
+
+    public void setChilds(List<Menu> childs) {
+        this.childs = childs;
     }
 
     public int getId() {
@@ -92,11 +116,11 @@ public class sys_res {
         this.res_state = res_state;
     }
 
-    public String getPar_id() {
+    public int getPar_id() {
         return par_id;
     }
 
-    public void setPar_id(String par_id) {
+    public void setPar_id(int par_id) {
         this.par_id = par_id;
     }
 }

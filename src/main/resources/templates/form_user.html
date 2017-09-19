@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>高含硫气田集输管道安全裕量评价及预警智能化管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The styles -->
+<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+.area-btns {
+	position: absolute;
+}
+</style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/charisma-app.css" rel="stylesheet">
+<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+<link href='css/fullcalendar.css' rel='stylesheet'>
+<link href='css/fullcalendar.print.css' rel='stylesheet' media='print'>
+<link href='css/chosen.css' rel='stylesheet'>
+<link href='css/uniform.default.css' rel='stylesheet'>
+<link href='css/colorbox.css' rel='stylesheet'>
+<link href='css/jquery.cleditor.css' rel='stylesheet'>
+<link href='css/jquery.noty.css' rel='stylesheet'>
+<link href='css/noty_theme_default.css' rel='stylesheet'>
+<link href='css/elfinder.min.css' rel='stylesheet'>
+<link href='css/elfinder.theme.css' rel='stylesheet'>
+<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+<link href='css/opa-icons.css' rel='stylesheet'>
+<link href='css/uploadify.css' rel='stylesheet'>
+<link rel="stylesheet" href="css/index.css">
+
+<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+</head>
+
+<body>
+		<div id="wrap">
+			<div id="content">
+			<br/>
+				<div class="container-fluid">
+				<div class="row-fluid">
+						
+					
+					<div id="content" class="span10">
+					<!-- content starts -->
+
+					<div class="row-fluid sortable">		
+						<div class="box span12">
+							<div class="box-header well" data-original-title>
+								<h2><i class="icon-th-list"></i>用户管理</h2>
+								<div class="box-icon">
+								</div>
+								</div>
+								<div class="box-content">
+									<div class="area-btns">
+										<a class="btn btn-add btn-addModel" href="#"><i
+											class="icon-plus icon-white"></i>新增</a> <a class="btn btn-add"
+											href="#" onclick="showPopup('#myModal');"><i
+											class="icon-plus icon-white"></i>批量导入</a>
+									</div>
+									<table
+										class="table table-striped table-bordered bootstrap-datatable datatable">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>账号</th>
+												<th>电话</th>
+												<th>信息</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td class="center">admin</td>
+												<td class="center">13334567856</td>
+												<td class="center">普通用户</td>
+												<td class="center">
+												<a class="btn btn-primary btn-query" href="#">
+													<i class="icon-zoom-in icon-white"></i> 查看
+												</a>
+												<a class="btn btn-primary btn-update" href="#">
+													<i class="icon-edit icon-white"></i> 修改
+												</a> <a class="btn btn-primary btn-del" href="#"> <i
+														class="icon-trash icon-white"></i> 删除
+												</a> <a class="btn btn-primary btn-updateState" href="#"> <i
+														class="icon-wrench icon-white"></i> 修改状态
+												</a></td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td class="center">system</td>
+												<td class="center">13830003100</td>
+												<td class="center">普通用户</td>
+												<td class="center"><a class="btn btn-primary btn-query" href="#">
+														<i class="icon-zoom-in icon-white"></i> 查看
+												</a> <a class="btn btn-primary" href="#"> <i
+														class="icon-edit icon-white"></i> 修改
+												</a> <a class="btn btn-primary btn-del" href="#"> <i
+														class="icon-trash icon-white"></i> 删除
+												</a> <a class="btn btn-primary btn-updateState" href="#"> <i
+														class="icon-wrench icon-white"></i> 修改状态
+												</a></td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td class="center">Teaching</td>
+												<td class="center">13334567856</td>
+												<td class="center">普通用户</td>
+												<td class="center"><a class="btn btn-primary btn-query" href="#">
+														<i class="icon-zoom-in icon-white"></i> 查看
+												</a> <a class="btn btn-primary" href="#"> <i
+														class="icon-edit icon-white"></i> 修改
+												</a> <a class="btn btn-primary btn-del" href="#"> <i
+														class="icon-trash icon-white"></i> 删除
+												</a> <a class="btn btn-primary btn-updateState" href="#"> <i
+														class="icon-wrench icon-white"></i> 修改状态
+												</a></td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td class="center">student</td>
+												<td class="center">13391574938</td>
+												<td class="center">普通用户</td>
+												<td class="center"><a class="btn btn-primary btn-query" href="#">
+														<i class="icon-zoom-in icon-white"></i> 查看
+												</a> <a class="btn btn-primary" href="#"> <i
+														class="icon-edit icon-white"></i> 修改
+												</a> <a class="btn btn-primary btn-del" href="#"> <i
+														class="icon-trash icon-white"></i> 删除
+												</a> <a class="btn btn-primary btn-updateState" href="#"> <i
+														class="icon-wrench icon-white"></i> 修改状态
+												</a></td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td class="center">Parents</td>
+												<td class="center">13334567856</td>
+												<td class="center">普通用户</td>
+												<td class="center"><a class="btn btn-primary btn-query" href="#">
+														<i class="icon-zoom-in icon-white"></i> 查看
+												</a> <a class="btn btn-primary" href="#"> <i
+														class="icon-edit icon-white"></i> 修改
+												</a> <a class="btn btn-primary btn-del" href="#"> <i
+														class="icon-trash icon-white"></i> 删除
+												</a> <a class="btn btn-primary btn-updateState" href="#"> <i
+														class="icon-wrench icon-white"></i> 修改状态
+												</a></td>
+											</tr>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+							<!--/span-->
+						</div>
+						<!--/row-->
+						<!-- content ends -->
+					</div>
+					<!--/#content.span10-->
+				</div>
+				<!--/fluid-row-->
+
+
+				<div class="modal hide fade" id="myModal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>批量导入</h3>
+					</div>
+					<div class="modal-body">
+						<input type="file">
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">取消</a> <a href="#"
+							class="btn btn-primary">保存</a>
+					</div>
+				</div>
+
+				<div class="modal hide fade" id="addModal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>用户信息录入</h3>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" id="form_add">
+							<fieldset>
+								<div class="control-group">
+									<label class="control-label" for="typeahead"> 账号</label>
+									<div class="controls">
+										<input type="text" name="#" class="span3 typeahead"
+											id="cuserAcc">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">密码</label>
+									<div class="controls">
+										<input type="text" name="#" class="span3 typeahead " id="Pwd">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">重复密码</label>
+									<div class="controls">
+										<input type="text" name="#" class="span3 typeahead "
+											id="cuserPwd ">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">选择角色</label>
+									<div class="controls">
+										<input type="checkbox">管理者<br> <input
+											type="checkbox">教师<br> <input type="checkbox">教研员<br>
+										<input type="checkbox">学生<br> <input
+											type="checkbox">家长<br>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">姓名</label>
+									<div class="controls">
+										<input type="text" name="#" class="span3 typeahead"
+											id="cuserName">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">电话号码</label>
+									<div class="controls">
+										<input type="text" name="#" class="span3 typeahead"
+											id="cuserTel">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">邮箱</label>
+									<div class="controls">
+										<input type="text" name="#" class="span3 typeahead"
+											id="cuserEmail">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">简介</label>
+									<div class="controls">
+										<input type="text" name="userInfo" class="span3 typeahead"
+											id="cuserInfo">
+									</div>
+								</div>
+								<div class="control-group">
+							<label class="control-label" for="typeahead">状态 </label>
+							<div class="controls">
+								<!-- <input type="radio" name="state" value="启用" checked="checked"><span class="label label-success">激活</span> -->
+								<input type="radio" name="state" value="禁用"><span class="label label-important">激活</span>
+								<input type="radio" name="state" value="未使用"><span class="label label-warning">未激活</span>
+							</div>
+						</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">备注</label>
+									<div class="controls">
+										<textarea name="#" class="span3" rows="5" id="cuserRemark"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">取消</a> <a href="#"
+							class="btn btn-primary">确定</a>
+					</div>
+				</div>
+
+				<div class="modal hide fade" id="queryModal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>详细信息</h3>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" id="form_detail">
+							<fieldset>
+								<div class="control-group">
+									<label class="control-label" for="typeahead"> 登陆账号 </label>
+									<div class="controls">
+										<input type="text" name="userAcc" class="span3 typeahead"
+											id="typeahead" value="admin" readonly="readonly">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">姓名 </label>
+									<div class="controls">
+										<input type="text" name="userName" class="span3 typeahead"
+											id="typeahead" value="管理员" readonly="readonly">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">角色</label>
+									<div class="controls roleSelect">
+										<input type="text" name="roleStr" class="span3 typeahead"
+											id="typeahead" value="普通用户" readonly="readonly">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">电话号码</label>
+									<div class="controls">
+										<input type="text" name="userTel" class="span3 typeahead"
+											id="typeahead" value="13334567856" readonly="readonly">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">邮箱</label>
+									<div class="controls">
+										<input type="text" name="userEmail" class="span3 typeahead"
+											id="typeahead" value="test@thu.com" readonly="readonly">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">信息</label>
+									<div class="controls">
+										<input type="text" name="userRemark" class="span3 typeahead"
+											id="typeahead" value="普通用户" readonly="readonly">
+
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">备注</label>
+									<div class="controls">
+										<textarea name="info" class="span3" rows="3"
+											readonly="readonly"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">取消</a> <a href="#"
+							class="btn btn-primary">确认</a>
+					</div>
+				</div>
+
+				<div class="modal hide fade" id="updateModal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>用户信息修改</h3>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" id="form_add">
+							<fieldset>
+								<div class="control-group">
+									<label class="control-label" for="typeahead"> 登陆账号 </label>
+									<div class="controls">
+										<input type="text" name="userAcc" class="span3 typeahead"
+											id="typeahead" value="admin" readonly="readonly">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">姓名 </label>
+									<div class="controls">
+										<input type="text" name="userName" class="span3 typeahead"
+											id="typeahead" value="管理员">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">选择角色</label>
+									<div class="controls">
+										<input type="checkbox" name="role" checked="checked">管理者<br>
+										<input type="checkbox" name="role">教师<br>
+										<input type="checkbox" name="role">教研员<br>
+										<input type="checkbox" name="role">学生<br>
+										<input type="checkbox" name="role">家长<br>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="typeahead">电话号码</label>
+									<div class="controls">
+										<input type="text" name="userTel" class="span3 typeahead"
+											id="typeahead" value="13334567856">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">邮箱</label>
+									<div class="controls">
+										<input type="text" name="userEmail" class="span3 typeahead"
+											id="typeahead" value="test@thu.com">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">信息</label>
+									<div class="controls">
+										<input type="text" name="userRemark" class="span3 typeahead"
+											id="typeahead" value="普通用户">
+
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="textarea2">备注</label>
+									<div class="controls">
+										<textarea name="info" class="span3" rows="3"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">取消</a> <a href="#"
+							class="btn btn-primary">确定</a>
+					</div>
+				</div>
+				<div class="modal hide fade" id="delModal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>删除</h3>
+					</div>
+					<div class="modal-body">
+						<p>请确认是否删除该个体？</p>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">取消</a> <a href="#"
+							class="btn btn-primary">确认</a>
+					</div>
+				</div>
+
+				<div class="modal hide fade" id="updateStateModal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>状态修改</h3>
+					</div>
+					<div class="modal-body">
+						<div class="control-group">
+							<div class="controls">
+								<input type="radio" name="state" value="激活"><span
+									class="label label-success">激活</span><br> <input
+									type="radio" name="state" value="禁用"><span
+									class="label label-important">禁用</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">取消</a> <a href="#"
+							class="btn btn-primary">保存</a>
+					</div>
+				</div>
+
+
+			</div><!--/.fluid-container-->	
+		</div>
+	
+	</div>
+
+			<!-- external javascript
+	================================================== -->
+			<!-- Placed at the end of the document so the pages load faster -->
+
+			<!-- jQuery -->
+			<script src="js/jquery-1.7.2.min.js"></script>
+			<!-- jQuery UI -->
+			<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+			<!-- transition / effect library -->
+			<script src="js/bootstrap-transition.js"></script>
+			<!-- alert enhancer library -->
+			<script src="js/bootstrap-alert.js"></script>
+			<!-- modal / dialog library -->
+			<script src="js/bootstrap-modal.js"></script>
+			<!-- custom dropdown library -->
+			<script src="js/bootstrap-dropdown.js"></script>
+			<!-- scrolspy library -->
+			<script src="js/bootstrap-scrollspy.js"></script>
+			<!-- library for creating tabs -->
+			<script src="js/bootstrap-tab.js"></script>
+			<!-- library for advanced tooltip -->
+			<script src="js/bootstrap-tooltip.js"></script>
+			<!-- popover effect library -->
+			<script src="js/bootstrap-popover.js"></script>
+			<!-- button enhancer library -->
+			<script src="js/bootstrap-button.js"></script>
+			<!-- accordion library (optional, not used in demo) -->
+			<script src="js/bootstrap-collapse.js"></script>
+			<!-- carousel slideshow library (optional, not used in demo) -->
+			<script src="js/bootstrap-carousel.js"></script>
+			<!-- autocomplete library -->
+			<script src="js/bootstrap-typeahead.js"></script>
+			<!-- tour library -->
+			<script src="js/bootstrap-tour.js"></script>
+			<!-- library for cookie management -->
+			<script src="js/jquery.cookie.js"></script>
+			<!-- calander plugin -->
+			<script src='js/fullcalendar.min.js'></script>
+			<!-- data table plugin -->
+			<script src='js/jquery.dataTables.min.js'></script>
+
+			<!-- chart libraries start -->
+			<script src="js/excanvas.js"></script>
+			<script src="js/jquery.flot.min.js"></script>
+			<script src="js/jquery.flot.pie.min.js"></script>
+			<script src="js/jquery.flot.stack.js"></script>
+			<script src="js/jquery.flot.resize.min.js"></script>
+			<!-- chart libraries end -->
+
+			<!-- select or dropdown enhancer -->
+			<script src="js/jquery.chosen.min.js"></script>
+			<!-- checkbox, radio, and file input styler -->
+			<script src="js/jquery.uniform.min.js"></script>
+			<!-- plugin for gallery image view -->
+			<script src="js/jquery.colorbox.min.js"></script>
+			<!-- rich text editor library -->
+			<script src="js/jquery.cleditor.min.js"></script>
+			<!-- notification plugin -->
+			<script src="js/jquery.noty.js"></script>
+			<!-- file manager library -->
+			<script src="js/jquery.elfinder.min.js"></script>
+			<!-- star rating plugin -->
+			<script src="js/jquery.raty.min.js"></script>
+			<!-- for iOS style toggle switch -->
+			<script src="js/jquery.iphone.toggle.js"></script>
+			<!-- autogrowing textarea plugin -->
+			<script src="js/jquery.autogrow-textarea.js"></script>
+			<!-- multiple file upload plugin -->
+			<script src="js/jquery.uploadify-3.1.min.js"></script>
+			<!-- history.js for cross-browser state change on ajax -->
+			<script src="js/jquery.history.js"></script>
+			<!-- 公共js -->
+			<script src="js/common.js"></script>
+
+			<!-- application script for Charisma demo -->
+			<script src="js/charisma.js"></script>
+
+			<!-- top导航 -->
+			<script type="text/javascript">
+				$(function($) {
+					activeMenu("xtgl", "yhgl");
+				});
+			</script>
+</body>
+</html>

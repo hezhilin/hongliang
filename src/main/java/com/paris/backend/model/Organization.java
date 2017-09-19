@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.paris.backend.constants.OrganizationType;
@@ -35,7 +36,7 @@ public class Organization{
 	@NotEmpty(message = "*Please provide an address")
 	@Column(name="address")
 	private String address;
-	
+
 	@Column(name = "email")
 	@Email(message = "*Please provide a valid email")
 	private String email;

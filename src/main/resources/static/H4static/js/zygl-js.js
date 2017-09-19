@@ -1,0 +1,43 @@
+
+$(function($) {
+	
+	/*基础教育部分选择条件*/
+	$("ul.filter-option").find("li").find("a:not(.add-btn)").click(function(){
+		$(this).parent().find("a").removeClass("active");
+		$(this).addClass("active");
+	});
+	/*章节目录页面中选择学段初始化年级*/
+	$("ul.filter-option").find("li.noTopBorder").find("a").click(function(){
+		$(this).parent().find("a").removeClass("active");
+		if($(this).hasClass("primary")){
+			$("ul.filter-option").find("li.nj").find("a.primary").css("display","");
+			$("ul.filter-option").find("li.nj").find("a.juniorHigh").css("display","none");
+			$("ul.filter-option").find("li.nj").find("a.seniorMiddle").css("display","none");
+			$("ul.filter-option").find("li.nj").find("a.primary").eq(0).addClass("active");
+		};
+		if($(this).hasClass("juniorHigh")){
+			$("ul.filter-option").find("li.nj").find("a.primary").css("display","none");
+			$("ul.filter-option").find("li.nj").find("a.juniorHigh").css("display","");
+			$("ul.filter-option").find("li.nj").find("a.seniorMiddle").css("display","none");
+			$("ul.filter-option").find("li.nj").find("a.juniorHigh").eq(0).addClass("active");
+		};
+		if($(this).hasClass("seniorMiddle")){
+			$("ul.filter-option").find("li.nj").find("a.primary").css("display","none");
+			$("ul.filter-option").find("li.nj").find("a.juniorHigh").css("display","none");
+			$("ul.filter-option").find("li.nj").find("a.seniorMiddle").css("display","");
+			$("ul.filter-option").find("li.nj").find("a.seniorMiddle").eq(0).addClass("active");
+		};
+		$(this).addClass("active");
+	});
+	/*章节目录和知识点切换*/
+	$("ul.center-btn").find("li").find("a.zjml").click(function(){
+		$("ul.filter-option").find("li.nj,li.bb").css("display","");
+		$(this).addClass("active");
+		$("ul.center-btn").find("li").find("a.zsd").removeClass("active");
+	});
+	$("ul.center-btn").find("li").find("a.zsd").click(function(){
+		$("ul.filter-option").find("li.nj,li.bb").css("display","none");
+		$(this).addClass("active");
+		$("ul.center-btn").find("li").find("a.zjml").removeClass("active");
+	});
+});

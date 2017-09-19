@@ -2,6 +2,8 @@ package com.paris.backend.service;
 
 import java.util.List;
 
+import com.paris.backend.model.Menu;
+import com.paris.backend.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,9 @@ public class BasicInfoServiceImpl implements BasicInfoService{
 
 	@Autowired
 	private OrganizationRepository organizationRepository;
-	
+
+	@Autowired
+	private MenuRepository menuRepository;
 
 	@Override
 	public List<Organization> findAllOrganization() {
@@ -35,5 +39,10 @@ public class BasicInfoServiceImpl implements BasicInfoService{
 	@Override
 	public List<Organization> findOrganizationById(int id) {
 		return organizationRepository.findOrganizationById(id);
+	}
+
+	public List<Menu> findAllSys_res()
+	{
+		return menuRepository.findAll();
 	}
 }
