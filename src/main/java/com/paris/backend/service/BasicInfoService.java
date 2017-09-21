@@ -3,6 +3,7 @@ package com.paris.backend.service;
 import java.util.List;
 
 import com.paris.backend.model.Organization;
+import com.paris.backend.model.Menu;
 
 public interface BasicInfoService {
 
@@ -14,5 +15,6 @@ public interface BasicInfoService {
 
 
 	public void saveOrganization(Organization organization);
+	public List<Menu> findAllSys_res();
 
 }
