@@ -47,4 +47,78 @@ public class CmsNews {
     @Column(name ="user_id")
     private int user_id;
 
+    public CmsNews() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCatalog_id() {
+        return catalog_id;
+    }
+
+    public void setCatalog_id(int catalog_id) {
+        this.catalog_id = catalog_id;
+    }
+
+    public String getNewsTitle() {
+        return NewsTitle;
+    }
+
+    public void setNewsTitle(String newsTitle) {
+        NewsTitle = newsTitle;
+    }
+
+    public String getNewsPic() {
+        return NewsPic;
+    }
+
+    public void setNewsPic(String newsPic) {
+        NewsPic = newsPic;
+    }
+
+    public String getNewsBrief() {
+        return NewsBrief;
+    }
+
+    public void setNewsBrief(String newsBrief) {
+        NewsBrief = newsBrief;
+    }
+
+    public String getNewsContent() {
+        return NewsContent;
+    }
+
+    public void setNewsContent(String newsContent) {
+        NewsContent = newsContent;
+    }
+
+    public String getNewsState() {
+        return NewsState;
+    }
+
+    public void setNewsState(String newsState) {
+        NewsState = newsState;
+    }
+
+    public Date getNewsDate() {
+        return NewsDate;
+    }
+
+    public void setNewsDate(Date newsDate) {
+        NewsDate = newsDate;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
 }

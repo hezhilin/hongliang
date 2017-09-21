@@ -21,5 +21,30 @@ public class HlShenqings {
     @Column(name ="shuliang")
     private int ShuLiang;
 
+    public HlShenqings() {
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getZuBie() {
+        return ZuBie;
+    }
+
+    public void setZuBie(String zuBie) {
+        ZuBie = zuBie;
+    }
+
+    public int getShuLiang() {
+        return ShuLiang;
+    }
+
+    public void setShuLiang(int shuLiang) {
+        ShuLiang = shuLiang;
+    }
 }

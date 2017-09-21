@@ -96,4 +96,215 @@ public class HlShenqing {
     @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
     @JoinTable(name = "hlShenqing_hlShenqings", joinColumns = @JoinColumn(name = "sq_id"), inverseJoinColumns = @JoinColumn(name = "sqs_id"))
     private HlShenqings hlShenqings;
+
+    public HlShenqing() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBeiMing() {
+        return BeiMing;
+    }
+
+    public void setBeiMing(String beiMing) {
+        BeiMing = beiMing;
+    }
+
+    public String getSaiZhi() {
+        return SaiZhi;
+    }
+
+    public void setSaiZhi(String saiZhi) {
+        SaiZhi = saiZhi;
+    }
+
+    public int getTuanTi() {
+        return TuanTi;
+    }
+
+    public void setTuanTi(int tuanTi) {
+        TuanTi = tuanTi;
+    }
+
+    public int getDanDa() {
+        return DanDa;
+    }
+
+    public void setDanDa(int danDa) {
+        DanDa = danDa;
+    }
+
+    public int getTTJieDuan() {
+        return TTJieDuan;
+    }
+
+    public void setTTJieDuan(int TTJieDuan) {
+        this.TTJieDuan = TTJieDuan;
+    }
+
+    public int getTTJieDuanLX() {
+        return TTJieDuanLX;
+    }
+
+    public void setTTJieDuanLX(int TTJieDuanLX) {
+        this.TTJieDuanLX = TTJieDuanLX;
+    }
+
+    public int getTTNan() {
+        return TTNan;
+    }
+
+    public void setTTNan(int TTNan) {
+        this.TTNan = TTNan;
+    }
+
+    public int getTTNanZu() {
+        return TTNanZu;
+    }
+
+    public void setTTNanZu(int TTNanZu) {
+        this.TTNanZu = TTNanZu;
+    }
+
+    public int getTTNv() {
+        return TTNv;
+    }
+
+    public void setTTNv(int TTNv) {
+        this.TTNv = TTNv;
+    }
+
+    public int getTTNvZu() {
+        return TTNvZu;
+    }
+
+    public void setTTNvZu(int TTNvZu) {
+        this.TTNvZu = TTNvZu;
+    }
+
+    public int getTTHun() {
+        return TTHun;
+    }
+
+    public void setTTHun(int TTHun) {
+        this.TTHun = TTHun;
+    }
+
+    public int getTTHunZu() {
+        return TTHunZu;
+    }
+
+    public void setTTHunZu(int TTHunZu) {
+        this.TTHunZu = TTHunZu;
+    }
+
+    public int getDDJieDuan() {
+        return DDJieDuan;
+    }
+
+    public void setDDJieDuan(int DDJieDuan) {
+        this.DDJieDuan = DDJieDuan;
+    }
+
+    public int getDDJieDuanLX() {
+        return DDJieDuanLX;
+    }
+
+    public void setDDJieDuanLX(int DDJieDuanLX) {
+        this.DDJieDuanLX = DDJieDuanLX;
+    }
+
+    public int getDDNan() {
+        return DDNan;
+    }
+
+    public void setDDNan(int DDNan) {
+        this.DDNan = DDNan;
+    }
+
+    public int getDDNanZu() {
+        return DDNanZu;
+    }
+
+    public void setDDNanZu(int DDNanZu) {
+        this.DDNanZu = DDNanZu;
+    }
+
+    public int getDDNv() {
+        return DDNv;
+    }
+
+    public void setDDNv(int DDNv) {
+        this.DDNv = DDNv;
+    }
+
+    public int getDDNvZu() {
+        return DDNvZu;
+    }
+
+    public void setDDNvZu(int DDNvZu) {
+        this.DDNvZu = DDNvZu;
+    }
+
+    public Date getSQSJ() {
+        return SQSJ;
+    }
+
+    public void setSQSJ(Date SQSJ) {
+        this.SQSJ = SQSJ;
+    }
+
+    public int getSQR() {
+        return SQR;
+    }
+
+    public void setSQR(int SQR) {
+        this.SQR = SQR;
+    }
+
+    public Date getSHSJ() {
+        return SHSJ;
+    }
+
+    public void setSHSJ(Date SHSJ) {
+        this.SHSJ = SHSJ;
+    }
+
+    public int getSHR() {
+        return SHR;
+    }
+
+    public void setSHR(int SHR) {
+        this.SHR = SHR;
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int status) {
+        Status = status;
+    }
+
+    public String getMemo() {
+        return Memo;
+    }
+
+    public void setMemo(String memo) {
+        Memo = memo;
+    }
+
+    public HlShenqings getHlShenqings() {
+        return hlShenqings;
+    }
+
+    public void setHlShenqings(HlShenqings hlShenqings) {
+        this.hlShenqings = hlShenqings;
+    }
 }

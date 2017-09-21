@@ -43,5 +43,70 @@ public class CmsCatalog {
     @Column(name="catalog_order")
     private int catalog_order;
 
+    public CmsCatalog() {
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPar_id() {
+        return par_id;
+    }
+
+    public void setPar_id(int par_id) {
+        this.par_id = par_id;
+    }
+
+    public String getCatalog_name() {
+        return catalog_name;
+    }
+
+    public void setCatalog_name(String catalog_name) {
+        this.catalog_name = catalog_name;
+    }
+
+    public String getCatalog_type() {
+        return catalog_type;
+    }
+
+    public void setCatalog_type(String catalog_type) {
+        this.catalog_type = catalog_type;
+    }
+
+    public String getCatalog_state() {
+        return catalog_state;
+    }
+
+    public void setCatalog_state(String catalog_state) {
+        this.catalog_state = catalog_state;
+    }
+
+    public String getCatalog_url() {
+        return catalog_url;
+    }
+
+    public void setCatalog_url(String catalog_url) {
+        this.catalog_url = catalog_url;
+    }
+
+    public String getCatalog_opentype() {
+        return catalog_opentype;
+    }
+
+    public void setCatalog_opentype(String catalog_opentype) {
+        this.catalog_opentype = catalog_opentype;
+    }
+
+    public int getCatalog_order() {
+        return catalog_order;
+    }
+
+    public void setCatalog_order(int catalog_order) {
+        this.catalog_order = catalog_order;
+    }
 }
