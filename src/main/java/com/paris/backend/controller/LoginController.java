@@ -31,14 +31,14 @@ public class LoginController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/index", method = RequestMethod.GET)
+	@RequestMapping(value="/main", method = RequestMethod.GET)
 	public ModelAndView home(HttpSession session){
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
 		modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-		modelAndView.setViewName("index");
+		modelAndView.setViewName("main");
 		return modelAndView;
 	}
 }
