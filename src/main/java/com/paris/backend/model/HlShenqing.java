@@ -32,6 +32,9 @@ public class HlShenqing {
     @Column(name ="danda")
     private int DanDa;     //0 无单打  1 有单打
 
+    @Column(name ="shuang")
+    private int Shuang;     //0 无双打  1 有双打
+
     @Column(name ="ttjieduan")
     private int TTJieDuan;  //0 团体不区分阶段  1 区分比赛阶段（第一阶段循环，第二阶段淘汰）
 
@@ -74,6 +77,32 @@ public class HlShenqing {
     @Column(name ="ddnvzu")
     private int DDNvZu;    //单打女子区分组别
 
+
+
+    @Column(name ="sdjieduan")
+    private int SDJieDuan;  //0 双打不区分阶段  1 区分比赛阶段（第一阶段循环，第二阶段淘汰）
+
+    @Column(name = "sdjieduanlx")
+    private int SDJieDuanLX;    //不区分比赛阶段，即单阶段类型  1 循环  2 淘汰
+
+    @Column(name ="sdnan")
+    private int SDNan;  //双打男子
+
+    @Column(name ="sdnanzu")
+    private int SDNanZu;    //双打男子区分组别
+
+    @Column(name ="sdnv")
+    private int SDNv;  //双打女子
+
+    @Column(name ="sdnvzu")
+    private int SDNvZu;    //双打女子区分组别
+
+    @Column(name ="sdhun")
+    private int SDHun;  //混双
+
+    @Column(name ="sdhunzu")
+    private int SDHunZu;    //混双区分组别
+
     @Column(name ="sqsj")
     private Date SQSJ;  //申请时间
 
@@ -92,6 +121,13 @@ public class HlShenqing {
     @Column(name ="memo")
     @Length(min = 2 ,max = 100)
     private String Memo;
+
+    @Column(name = "sheng")
+    private String sheng;   //省
+
+    @Column(name = "shi")
+    private String shi;   //市
+
 
     @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
     @JoinTable(name = "hlShenqing_hlShenqings", joinColumns = @JoinColumn(name = "sq_id"), inverseJoinColumns = @JoinColumn(name = "sqs_id"))
@@ -300,11 +336,99 @@ public class HlShenqing {
         Memo = memo;
     }
 
+    public String getSheng() {
+        return sheng;
+    }
+
+    public void setSheng(String sheng) {
+        this.sheng = sheng;
+    }
+
+    public String getShi() {
+        return shi;
+    }
+
+    public void setShi(String shi) {
+        this.shi = shi;
+    }
+
     public HlShenqings getHlShenqings() {
         return hlShenqings;
     }
 
     public void setHlShenqings(HlShenqings hlShenqings) {
         this.hlShenqings = hlShenqings;
+    }
+
+    public int getShuang() {
+        return Shuang;
+    }
+
+    public void setShuang(int shuang) {
+        Shuang = shuang;
+    }
+
+    public int getSDJieDuan() {
+        return SDJieDuan;
+    }
+
+    public void setSDJieDuan(int SDJieDuan) {
+        this.SDJieDuan = SDJieDuan;
+    }
+
+    public int getSDJieDuanLX() {
+        return SDJieDuanLX;
+    }
+
+    public void setSDJieDuanLX(int SDJieDuanLX) {
+        this.SDJieDuanLX = SDJieDuanLX;
+    }
+
+    public int getSDNan() {
+        return SDNan;
+    }
+
+    public void setSDNan(int SDNan) {
+        this.SDNan = SDNan;
+    }
+
+    public int getSDNanZu() {
+        return SDNanZu;
+    }
+
+    public void setSDNanZu(int SDNanZu) {
+        this.SDNanZu = SDNanZu;
+    }
+
+    public int getSDNv() {
+        return SDNv;
+    }
+
+    public void setSDNv(int SDNv) {
+        this.SDNv = SDNv;
+    }
+
+    public int getSDNvZu() {
+        return SDNvZu;
+    }
+
+    public void setSDNvZu(int SDNvZu) {
+        this.SDNvZu = SDNvZu;
+    }
+
+    public int getSDHun() {
+        return SDHun;
+    }
+
+    public void setSDHun(int SDHun) {
+        this.SDHun = SDHun;
+    }
+
+    public int getSDHunZu() {
+        return SDHunZu;
+    }
+
+    public void setSDHunZu(int SDHunZu) {
+        this.SDHunZu = SDHunZu;
     }
 }

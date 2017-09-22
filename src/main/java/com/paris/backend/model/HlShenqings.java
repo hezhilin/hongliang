@@ -16,10 +16,10 @@ public class HlShenqings {
     private int id;
 
     @Column(name ="zubie")
-    private String ZuBie;
+    private String ZuBie;       //组别
 
     @Column(name ="shuliang")
-    private int ShuLiang;
+    private int ShuLiang;       //数量
 
     public HlShenqings() {
     }
