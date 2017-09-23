@@ -121,6 +121,7 @@ public class BasicInfoController {
 	public ModelAndView getWrapper(){
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("index_v1");
+		//response.addHeader("x-frame-options","SAMEORIGIN");
 		return modelAndView;
 	}
 }
