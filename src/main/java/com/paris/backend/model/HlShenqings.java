@@ -22,6 +22,12 @@ public class HlShenqings {
     private int ShuLiang;       //数量
 
     public HlShenqings() {
+
+    }
+
+    public HlShenqings(String zuBie, int shuLiang) {
+        ZuBie = zuBie;
+        ShuLiang = shuLiang;
     }
 
     public int getId() {

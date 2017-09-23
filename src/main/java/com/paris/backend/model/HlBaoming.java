@@ -19,6 +19,9 @@ public class HlBaoming {
     @Column(name = "bm_id")
     private int id;
 
+    @Column(name = "sq_id")
+    private int sq_id;      //比赛申请ID
+
     @Column(name = "name")
     @NotEmpty(message = "*请输入队名")
     private String name;
@@ -152,6 +155,14 @@ public class HlBaoming {
 
     public void setMemo(String memo) {
         Memo = memo;
+    }
+
+    public int getSq_id() {
+        return sq_id;
+    }
+
+    public void setSq_id(int sq_id) {
+        this.sq_id = sq_id;
     }
 
     public HlBaomingJiaolian getHlBaomingJiaolian() {

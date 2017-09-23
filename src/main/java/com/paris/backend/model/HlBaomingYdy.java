@@ -37,6 +37,9 @@ public class HlBaomingYdy {
     @Column(name = "user_id")
     private int user_id;        //用户ID，与用户表进行绑定
 
+//    @Column(name = "leibie")
+//    private String leibie;       //类别    男子  女子    有性别就可以了，不用加这个类别
+
     @Column(name = "zubie")
     private String zubie;       //组别
 
