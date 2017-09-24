@@ -33,7 +33,8 @@
 			}
 			
 			#showAddDoublesMan,
-			#showAddDoublesWoman {
+			#showAddDoublesWoman,
+			#distbymixsdgroup {
 				display: none;
 			}
 		</style>
@@ -158,6 +159,19 @@
 		}
 	</script>
 
+	<!--双打混选-->
+	<script type="text/javascript">
+		var sddw = 1;
+
+		function clickAddSDGroup() {
+			if(sddw == 1) {
+				document.getElementById('addsdGroup').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			}
+			document.getElementById('addsdGroup').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			sddw = sddw + 1;
+		}
+	</script>
+
 	<body>
 		<form th:action="@{/applySubmit}" method="post">
 
@@ -268,8 +282,8 @@
 					<tr>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						<td>
-							<label><input name="DDNan" type="checkbox" value="" onclick="onClickHander(obj)"/>男 </label>
-							<label><input name="DDNanZu" type="checkbox" value="" onclick="remind(this,'showAddSoloMan')"/>区分组别</label>
+							<label><input name="DDNan" type="checkbox" value="1" onclick="onClickHander(obj)"/>男 </label>
+							<label><input name="DDNanZu" type="checkbox" value="1" onclick="remind(this,'showAddSoloMan')"/>区分组别</label>
 
 							<span id="showAddSoloMan">
 								<input type="button"  onclick="clickAddSoloMan();" value="添加组别">
@@ -283,8 +297,8 @@
 					<tr>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						<td>
-							<label><input name="DDNv" type="checkbox" value="" onclick=""/>女 </label>
-							<label><input name="DDNvZu" type="checkbox" value="" onclick="remind(this,'showAddSoloWoMan')"/>区分组别</label>
+							<label><input name="DDNv" type="checkbox" value="1" onclick=""/>女 </label>
+							<label><input name="DDNvZu" type="checkbox" value="1" onclick="remind(this,'showAddSoloWoMan')"/>区分组别</label>
 							<span id="showAddSoloWoMan">
 								<input type="button" onclick="clickAddSoloWoman();" value="添加组别">
 								<div id="addSoloWoman">
@@ -332,7 +346,7 @@
 						<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						<td>
 							<label><input name="SDNv" type="checkbox" value="1" onclick="onClickHander(obj)"/>女 </label>
-							<label><input name="SDNvZu" type="checkbox" value="" onclick="remind(this,'showAddDoublesWoman');"/>区分组别</label>
+							<label><input name="SDNvZu" type="checkbox" value="1" onclick="remind(this,'showAddDoublesWoman');"/>区分组别</label>
 							<span id="showAddDoublesWoman">
 								<input type="button" onclick="clickAddDoublesWoman();" value="添加组别">
 								<div id="addDoublesWoman">
@@ -341,7 +355,21 @@
 						</span>
 						</td>
 					</tr>
+					
+					<tr>
+						<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td>
+							<label><input name="SDHun" type="checkbox" value="1" onclick="onClickHander(obj)"/>混合 </label>
+							<label><input name="SDHunZu" type="checkbox" onclick="remind(this,'distbymixsdgroup')" value="1"/>区分组别</label>
 
+							<span id="distbymixsdgroup">
+								<input type="button"  onclick="clickAddSDGroup();" value="添加组别">
+								<div id="addsdGroup">
+	
+								</div>
+							</span>
+						</td>
+					</tr>
 				</table>
 			</div>
 
@@ -349,7 +377,6 @@
 				<tr align="center">
 					<td align="center"><input type="submit" value="确认提交"> </td>
 				</tr>
-
 			</table>
 		</form>
 
