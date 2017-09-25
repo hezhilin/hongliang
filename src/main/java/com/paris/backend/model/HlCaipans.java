@@ -24,5 +24,30 @@ public class HlCaipans {
     @Length(min = 2 ,max = 100)
     private String Memo;
 
+    public HlCaipans() {
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getJingli() {
+        return jingli;
+    }
+
+    public void setJingli(String jingli) {
+        this.jingli = jingli;
+    }
+
+    public String getMemo() {
+        return Memo;
+    }
+
+    public void setMemo(String memo) {
+        Memo = memo;
+    }
 }
