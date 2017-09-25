@@ -15,6 +15,9 @@ public class HlShenqings {
     @Column(name = "sqs_id")
     private int id;
 
+    @Column(name ="leibie")
+    private String leiBie;       //团体男子  团体女子 团体混合  男子单打  女子单打  男子双打  女子双打  混合双打 
+
     @Column(name ="zubie")
     private String ZuBie;       //组别
 
