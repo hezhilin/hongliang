@@ -67,9 +67,9 @@
 
 		function clickAddMan() {
 			if(x == 1) {
-				document.getElementById('addMan').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)" /> </div>';
+				document.getElementById('addMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体男子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)" /> </div>';
 			}
-			document.getElementById('addMan').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体男子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			x = x + 1;
 		}
 
@@ -78,9 +78,9 @@
 
 		function clickAddSoloMan() {
 			if(xm == 1) {
-				document.getElementById('addSoloMan').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addSoloMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addSoloMan').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addSoloMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			xm = xm + 1;
 		}
 	</script>
@@ -90,9 +90,9 @@
 
 		function clickAddWoman() {
 			if(y == 1) {
-				document.getElementById('addWoman').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体女子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addWoman').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体女子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			y = y + 1;
 		}
 
@@ -101,9 +101,9 @@
 
 		function clickAddSoloWoman() {
 			if(yw == 1) {
-				document.getElementById('addSoloWoman').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addSoloWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addSoloWoman').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addSoloWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			yw = yw + 1;
 		}
 	</script>
@@ -118,9 +118,9 @@
 
 		function clickAddGroup() {
 			if(z == 1) {
-				document.getElementById('addGroup').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体混合"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addGroup').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体混合"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			z = z + 1;
 		}
 	</script>
@@ -135,9 +135,9 @@
 
 		function clickAddDoublesMan() {
 			if(dm == 1) {
-				document.getElementById('addDoublesMan').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addDoublesMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addDoublesMan').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addDoublesMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			dm = dm + 1;
 		}
 	</script>
@@ -152,9 +152,9 @@
 
 		function clickAddDoublesWoman() {
 			if(dw == 1) {
-				document.getElementById('addDoublesWoman').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addDoublesWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addDoublesWoman').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addDoublesWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			dw = dw + 1;
 		}
 	</script>
@@ -165,9 +165,9 @@
 
 		function clickAddSDGroup() {
 			if(sddw == 1) {
-				document.getElementById('addsdGroup').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+				document.getElementById('addsdGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="混合双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			}
-			document.getElementById('addsdGroup').innerHTML += '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+			document.getElementById('addsdGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="混合双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
 			sddw = sddw + 1;
 		}
 	</script>

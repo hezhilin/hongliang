@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>新闻列表</title>
+    ﻿<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="alternate icon" type="image/png" href="images/favicon.png">
+<link rel='icon' href='favicon.ico' type='image/x-ico' />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/default.min.css?t=227" />
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="lib/amazeui/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/handlebars.min.js"></script>
+<script type="text/javascript" src="js/iscroll-probe.js"></script>
+<script type="text/javascript" src="js/amazeui.min.js"></script>
+<script type="text/javascript" src="js/jquery.raty.js"></script>
+<script type="text/javascript" src="js/main.min.js?t=1"></script>
+</head>
+<body>
+    <header class="header">
+    <div class="header-container">
+        <div class="header-div pull-left">
+                <a class="header-logo">
+                    <img src="/images/index/logo.png" />
+                </a>
+            <button class="am-show-sm-only am-collapsed font f-btn" data-am-collapse="{target: '.header-nav'}">&#xe68b;</button>
+        </div>
+        
+
+        <nav>
+            <ul class="header-nav am-collapse">
+                <li class="on"><a href="index.html">宏亮首页</a></li>
+                <li><a href="news.html">赛事信息</a></li>
+                <li><a href="caipanlist.html">优秀裁判</a></li>
+                <li><a href="login.html">比赛管理系统</a></li>
+
+            </ul>
+            <div class="header-serch  am-hide-md-down">
+                <input type="text" name="name" value="" />
+                <em class="font"></em>
+            </div>
+        </nav>
+
+
+    </div>
+</header>
+    <div class="com-banner">
+        <img src="/images/index/index_banner.jpg" />
+    </div>
+    <div class="com-container">
+        <div class="cms-g">
+            <div class="am-hide-sm-only am-u-md-3 am-u-lg-3">
+                <div class="com-nav-left">
+                    <h1><em>新闻中心</em><i>NEWS</i></h1>
+                    <ul>
+                        <li class="on"><a href="#">赛事信息&#x25B8;</a></li>
+                        <li><a href="#">最新动态&#x25B8;</a></li>
+                        <li><a href="#">最新比赛&#x25B8;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-9 am-u-lg-9">
+                <div class="com-nav-title">
+                    <a href="#doc-oc-demo1" class="font am-show-sm-only" data-am-offcanvas>&#xe68b;</a>
+                    <span>公司新闻</span>
+                </div>
+                
+                <div class="new-list">
+                    <ul>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                        <li><a href="news.html"><span>&#x25B8;比赛最新动态</span><em>2017-4-11</em></a></li>
+                    </ul>
+                </div>
+                <div class="page-list">
+                    <a href="#"><<</a>
+                    <a href="#"><</a>
+                    <a href="#" class="num">1</a>
+                    <a href="#" class="num">2</a>
+                    <a href="#" class="num">3</a>
+                    <a href="#" class="on">4</a>
+                    <a href="#" class="num">5</a>
+                    <a href="#" class="num">6</a>
+                    <a href="#">></a>
+                    <a href="#">>></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="doc-oc-demo1" class="am-offcanvas">
+        <div class="am-offcanvas-bar">
+            <div class="am-offcanvas-content com-nav-left com-nav-left1">
+                <ul>
+                    <li class="on"><a href="#">赛事信息</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">最新比赛</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    ﻿<footer>
+    <div class="cms-g">
+        <div class="footer">
+
+            <span style="color:#fff;"> ©2017 hongliang.com &nbsp;&nbsp;&nbsp;地址： </span><br>
+            <span style="color:#fff;"> 技术支持：运城学院</span>
+        </div>   </div>
+</footer>
+</body>
+</html>

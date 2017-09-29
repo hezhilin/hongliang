@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <!--<style type="text/css">
+        #group {
+            display: none;
+        }
+
+        #solo {
+            display: none;
+        }
+
+        #doubles {
+            display: none;
+        }
+
+        #cyclegroup,
+        #cyclesolo {
+            display: none;
+        }
+
+        #distbymangroup,
+        #distbywomangroup,
+        #distbymixgroup {
+            display: none;
+        }
+
+        #showAddSoloMan,
+        #showAddSoloWoMan {
+            display: none;
+        }
+
+        #showAddDoublesMan,
+        #showAddDoublesWoman,
+        #distbymixsdgroup {
+            display: none;
+        }
+    </style>-->
+    <title>比赛申请表界面</title>
+
+</head>
+<script type="text/javascript">
+    function remind(o, divID) {
+        if (o.checked) {
+            document.getElementById(divID).style.display = "block";
+        } else {
+            document.getElementById(divID).style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    // 通用删除组别
+    function removeZubie(btn) {
+        var parent = btn.parentNode.parentNode;
+        parent.removeChild(btn.parentNode);
+
+    }
+</script>
+
+<!-- 在谷歌浏览器中不可以将1和2方法写在同一个代码块中。-->
+<script type="text/javascript">
+    // 团体男子添加组别
+    var x = 1;
+
+    function clickAddMan() {
+        if (x == 1) {
+            document.getElementById('addMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体男子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)" /> </div>';
+        }
+        document.getElementById('addMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体男子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        x = x + 1;
+    }
+
+    // 男子单打添加组别
+    var xm = 1;
+
+    function clickAddSoloMan() {
+        if (xm == 1) {
+            document.getElementById('addSoloMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addSoloMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        xm = xm + 1;
+    }
+</script>
+<script type="text/javascript">
+    // 团体女子添加组别
+    var y = 1;
+
+    function clickAddWoman() {
+        if (y == 1) {
+            document.getElementById('addWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体女子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体女子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        y = y + 1;
+    }
+
+    // 女子单打添加组别
+    var yw = 1;
+
+    function clickAddSoloWoman() {
+        if (yw == 1) {
+            document.getElementById('addSoloWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addSoloWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        yw = yw + 1;
+    }
+</script>
+
+<!--
+    作者：L
+    时间：2017-09-23
+    描述：团体混合比赛添加组别
+-->
+<script type="text/javascript">
+    var z = 1;
+
+    function clickAddGroup() {
+        if (z == 1) {
+            document.getElementById('addGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体混合"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="团体混合"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 团体&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        z = z + 1;
+    }
+</script>
+
+<!--
+    作者：L
+    时间：2017-09-23
+    描述：双打男子区分组别
+-->
+<script type="text/javascript">
+    var dm = 1;
+
+    function clickAddDoublesMan() {
+        if (dm == 1) {
+            document.getElementById('addDoublesMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addDoublesMan').innerHTML += '<div><input type="hidden"  name="leiBie" value="男子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        dm = dm + 1;
+    }
+</script>
+
+<!--
+    作者：L
+    时间：2017-09-23
+    描述：双打女子添加组别
+-->
+<script type="text/javascript">
+    var dw = 1;
+
+    function clickAddDoublesWoman() {
+        if (dw == 1) {
+            document.getElementById('addDoublesWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addDoublesWoman').innerHTML += '<div><input type="hidden"  name="leiBie" value="女子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        dw = dw + 1;
+    }
+</script>
+
+<!--双打混选-->
+<script type="text/javascript">
+    var sddw = 1;
+
+    function clickAddSDGroup() {
+        if (sddw == 1) {
+            document.getElementById('addsdGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="混合双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        }
+        document.getElementById('addsdGroup').innerHTML += '<div><input type="hidden"  name="leiBie" value="混合双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="组别名称" name="ZuBie"/>，大约<input type="text" name="ShuLiang"/> 人&nbsp;&nbsp;&nbsp;<input type="button" value="删除" onclick="removeZubie(this)"/> </div>';
+        sddw = sddw + 1;
+    }
+</script>
+
+<!-- 加载团体，单打和双打的细节-->
+<script type="text/javascript">
+    function loadDetails() {
+
+        var group = document.getElementById("group");
+        var solo = document.getElementById("solo");
+        var doubles = document.getElementById("doubles");
+
+        var selectGroup = document.getElementById("selectGroup");
+        var selectSolo = document.getElementById("selectSolo");
+        var selectDoubles = document.getElementById("selectDoubles");
+
+        if (selectGroup.checked) {
+            document.getElementById(group).style.display = "block";
+        } else {
+            document.getElementById(group).style.display = "none";
+        }
+
+        if (selectDoubles.checked) {
+            document.getElementById(doubles).style.display = "block";
+        } else {
+            document.getElementById(doubles).style.display = "none";
+        }
+
+        if (selectSolo.checked) {
+            document.getElementById(solo).style.display = "block";
+        } else {
+            document.getElementById(solo).style.display = "none";
+        }
+    }
+
+</script>
+
+<body>
+
+<form th:action="@{/editHlShenqing}" method="post" th:object="${hlShenqing}">
+
+    <table align="center">
+        <tr>
+            <td colspan="2" align="center">申请表</td>
+        </tr>
+        <tr>
+            <input type="hidden" th:field="*{id}"/>
+            <td>1.杯名：</td>
+            <td><input type="text" name="BeiMing" th:field="*{BeiMing}"/></td>
+        </tr>
+        <tr>
+            <td>2.项目：</td>
+            <td>
+                <label><input id="selectGroup" type="checkbox" th:checked="*{TuanTi}" name="TuanTi"
+                              onclick="remind(this,'group');"/>团体 </label> &nbsp;&nbsp;
+                <label><input id="selectSolo" type="checkbox" th:checked="*{DanDa}" value="1" name="DanDa"
+                              onclick="remind(this,'solo');"/>单打 </label> &nbsp;&nbsp;
+                <label><input id="selectDoubles" type="checkbox" th:checked="*{Shuang}" value="1"
+                              onclick="remind(this,'doubles');"/>双打 </label>
+            </td>
+        </tr>
+    </table>
+
+    <!--
+    作者：L
+    时间：2017-09-23
+    描述：团体申请
+-->
+    <div id="group" align="left">
+        <table align="center">
+
+            <tr>
+                <td>团体：</td>
+                <td>赛制：</td>
+                <td><input type="radio" name="SaiZhi" value="1" th:checked="(${SaiZhi=='1'})?'checked':'unchecked'">奥运赛制<input
+                        type="radio" name="SaiZhi" value="2" th:if="${SaiZhi=='2'}?'checked':'unchecked'">世锦赛赛制
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比赛阶段：</td>
+                <td>
+                    <label><input name="TTJieDuan" th:checked="(${TTJieDuan==1})?'checked':'unchecked'" type="radio"
+                                  value="1" onclick=""/>区分比赛阶段（第一阶段循环，第二阶段淘汰） </label><br/>
+                    <label><input id="distradio" th:checked="(${TTJieDuan==0})?'checked':'unchecked'" name="TTJieDuan"
+                                  type="radio" value="0" onclick="remind(this,'cyclegroup');"/>不区分比赛阶段 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label
+                        id="cyclegroup"><input type="radio" value="1"
+                                               th:checked="(${TTJieDuanLX==1})?'checked':'unchecked'"
+                                               name="TTJieDuanLX"/>循环&nbsp;&nbsp;&nbsp;<input type="radio" value="2"
+                                                                                              th:checked="(${TTJieDuanLX==2})?'checked':'unchecked'"
+                                                                                              name="TTJieDuanLX"/>淘汰</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="TTNan" type="checkbox" value="1" onclick="" th:checked="*{TTNan}"/>男</label>
+                    <label><input name="TTNanZu" type="checkbox" value="1" th:checked="*{TTNanZu}"
+                                  onclick="remind(this,'distbymangroup')"/>区分组别</label>
+
+                    <span id="distbymangroup">
+						<input type="button" id="addman" onclick="clickAddMan();" value="添加组别">
+							<div id="addMan">
+								<div th:each="device : ${hlShenqings}">
+									<div th:if="${device.leiBie == '团体男子'}">
+										<input type="hidden" name="leiBie"
+                                               value="团体男子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+                                                                                                  placeholder="组别名称"
+                                                                                                  name="ZuBie"
+                                                                                                  th:value="${device.ZuBie}"/>，大约<input
+                                            type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                            type="button" value="删除" onclick="removeZubie(this)"/>
+									</div>
+								</div>
+							</div>
+						</span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="TTNv" type="checkbox" value="1" th:checked="*{TTNv}"
+                                  onclick="onClickHander(obj)"/>女 </label>
+                    <label><input name="TTNvZu" type="checkbox" value="1" th:checked="*{TTNvZu}"
+                                  onclick="remind(this,'distbywomangroup')"/>区分组别</label>
+                    <span id="distbywomangroup">
+								<input type="button" id="addwoman" onclick="clickAddWoman();" value="添加组别">
+							<div id="addWoman">
+								<div th:each="device : ${hlShenqings}">
+									<div th:if="${device.leiBie == '团体女子'}">
+										<input type="hidden" name="leiBie"
+                                               value="团体女子"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+                                                                                                  placeholder="组别名称"
+                                                                                                  name="ZuBie"
+                                                                                                  th:value="${device.ZuBie}"/>，大约<input
+                                            type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                            type="button" value="删除" onclick="removeZubie(this)"/>
+									</div>
+								</div>
+							</div>
+						</span>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="TTHun" type="checkbox" value="1" th:checked="*{TTHun}"
+                                  onclick="onClickHander(obj)"/>混合 </label>
+                    <label><input name="TTHunZu" type="checkbox" th:checked="*{TTHunZu}"
+                                  onclick="remind(this,'distbymixgroup')" value="1"/>区分组别</label>
+
+                    <span id="distbymixgroup">
+						<input type="button" onclick="clickAddGroup();" value="添加组别">
+								<div id="addGroup">
+									<div th:each="device : ${hlShenqings}">
+										<div th:if="${device.leiBie == '团体混合'}">
+											<input type="hidden" name="leiBie" value="团体混合"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                type="text" placeholder="组别名称" name="ZuBie" th:value="${device.ZuBie}"/>，大约<input
+                                                type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                                type="button" value="删除" onclick="removeZubie(this)"/>
+										</div>
+									</div>
+								</div>
+						</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--
+    作者：L
+    时间：2017-09-23
+    描述：单打申请
+-->
+    <div id="solo" align="left">
+        <table align="center">
+
+            <tr>
+                <td>单打：</td>
+                <td>比赛阶段：</td>
+                <td>
+                    <label><input name="DDJieDuan" type="radio" value="1"
+                                  th:checked="(${DDJieDuan==1})?'checked':'unchecked'" onclick=""/>区分比赛阶段（第一阶段循环，第二阶段淘汰）
+                    </label><br/>
+                    <label><input id="distsolo" name="DDJieDuan" th:checked="(${DDJieDuan==0})?'checked':'unchecked'"
+                                  type="radio" value="0" onclick="remind(this,'cyclesolo');"/>不区分比赛阶段 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label
+                        id="cyclesolo"><input name="DDJieDuanLX" type="radio" value="1"
+                                              th:checked="(${DDJieDuanLX==1})?'checked':'unchecked'"/>循环&nbsp;&nbsp;&nbsp;<input
+                        name="DDJieDuanLX" type="radio" value="2"
+                        th:checked="(${DDJieDuanLX==2})?'checked':'unchecked'"/>淘汰</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="DDNan" type="checkbox" value="1" onclick="onClickHander(obj)"
+                                  th:checked="*{DDNan}"/>男 </label>
+                    <label><input name="DDNanZu" type="checkbox" th:checked="*{DDNanZu}" value="1"
+                                  onclick="remind(this,'showAddSoloMan')"/>区分组别</label>
+
+                    <span id="showAddSoloMan">
+								<input type="button" onclick="clickAddSoloMan();" value="添加组别">
+								<div id="addSoloMan">
+									<div th:each="device : ${hlShenqings}">
+										<div th:if="${device.leiBie == '男子单打'}">
+											<input type="hidden" name="leiBie" value="男子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                type="text" placeholder="组别名称" name="ZuBie" th:value="${device.ZuBie}"/>，大约<input
+                                                type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                                type="button" value="删除" onclick="removeZubie(this)"/>
+										</div>
+									</div>
+								</div>
+						</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="DDNv" type="checkbox" value="1" onclick="" th:checked="*{DDNv}"/>女 </label>
+                    <label><input name="DDNvZu" th:checked="*{DDNvZu}" type="checkbox" value="1"
+                                  onclick="remind(this,'showAddSoloWoMan')"/>区分组别</label>
+                    <span id="showAddSoloWoMan">
+								<input type="button" onclick="clickAddSoloWoman();" value="添加组别">
+								<div id="addSoloWoman">
+									<div th:each="device : ${hlShenqings}">
+										<div th:if="${device.leiBie == '女子单打'}">
+											<input type="hidden" name="leiBie" value="女子单打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                type="text" placeholder="组别名称" name="ZuBie" th:value="${device.ZuBie}"/>，大约<input
+                                                type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                                type="button" value="删除" onclick="removeZubie(this)"/>
+										</div>
+									</div>
+								</div>
+						</span>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <!--
+    作者：L
+    时间：2017-09-23
+    描述：双打申请
+-->
+    <div id="doubles" align="left">
+        <table align="center">
+
+            <tr>
+                <td>双打：</td>
+                <td>比赛阶段：</td>
+                <td>
+                    <label><input name="SDJieDuan" th:checked="*{SDJieDuan}" type="radio" value="1" onclick=""
+                                  th:checked="(${SDJieDuan==1})?'checked':'unchecked'"/>区分比赛阶段（第一阶段循环，第二阶段淘汰）
+                    </label><br/>
+                    <label><input id="distsolo" th:checked="*{SDJieDuan}" name="SDJieDuan" type="radio" value="0"
+                                  onclick="remind(this,'cyclesolo');"
+                                  th:checked="(${SDJieDuan==0})?'checked':'unchecked'"/>不区分比赛阶段 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label
+                        id="cyclesolo"><input name="SDJieDuanLX" type="radio" value="1"
+                                              th:checked="(${SDJieDuanLX==1})?'checked':'unchecked'"/>循环&nbsp;&nbsp;&nbsp;<input
+                        name="SDJieDuanLX" type="radio" value="2"
+                        th:checked="(${SDJieDuanLX==2})?'checked':'unchecked'"/>淘汰</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="SDNan" th:checked="*{SDNan}" type="checkbox" value="1"
+                                  onclick="onClickHander(obj)"/>男 </label>
+                    <label><input name="SDNanZu" th:checked="*{SDNanZu}" type="checkbox" value="1"
+                                  onclick="remind(this,'showAddDoublesMan');"/>区分组别</label>
+                    <span id="showAddDoublesMan">
+								<input type="button" onclick="clickAddDoublesMan();" value="添加组别">
+								<div id="addDoublesMan">
+									<div th:each="device : ${hlShenqings}">
+										<div th:if="${device.leiBie == '男子双打'}">
+											<input type="hidden" name="leiBie" value="男子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                type="text" placeholder="组别名称" name="ZuBie" th:value="${device.ZuBie}"/>，大约<input
+                                                type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                                type="button" value="删除" onclick="removeZubie(this)"/>
+										</div>
+									</div>
+								</div>
+						</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="SDNv" th:checked="*{SDNv}" type="checkbox" value="1"
+                                  onclick="onClickHander(obj)"/>女 </label>
+                    <label><input name="SDNvZu" th:checked="*{SDNvZu}" type="checkbox" value="1"
+                                  onclick="remind(this,'showAddDoublesWoman');"/>区分组别</label>
+                    <span id="showAddDoublesWoman">
+								<input type="button" onclick="clickAddDoublesWoman();" value="添加组别">
+								<div id="addDoublesWoman">
+									<div th:each="device : ${hlShenqings}">
+										<div th:if="${device.leiBie == '女子双打'}">
+											<input type="hidden" name="leiBie" value="女子双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                type="text" placeholder="组别名称" name="ZuBie" th:value="${device.ZuBie}"/>，大约<input
+                                                type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                                type="button" value="删除" onclick="removeZubie(this)"/>
+										</div>
+									</div>
+								</div>
+						</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <label><input name="SDHun" th:checked="*{SDHun}" type="checkbox" value="1"
+                                  onclick="onClickHander(obj)"/>混合 </label>
+                    <label><input name="SDHunZu" th:checked="*{SDHunZu}" type="checkbox"
+                                  onclick="remind(this,'distbymixsdgroup')" value="1"/>区分组别</label>
+
+                    <span id="distbymixsdgroup">
+								<input type="button" onclick="clickAddSDGroup();" value="添加组别">
+								<div id="addsdGroup">
+									<div th:each="device : ${hlShenqings}">
+										<div th:if="${device.leiBie == '团体双打'}">
+											<input type="hidden" name="leiBie" value="团体双打"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                type="text" placeholder="组别名称" name="ZuBie" th:value="${device.ZuBie}"/>，大约<input
+                                                type="text" name="ShuLiang" th:value="${device.ShuLiang}"/> 团体&nbsp;&nbsp;&nbsp;<input
+                                                type="button" value="删除" onclick="removeZubie(this)"/>
+										</div>
+									</div>
+								</div>
+							</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table align="center">
+        <tr align="center">
+            <td align="center"><input type="submit" value="确认修改"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

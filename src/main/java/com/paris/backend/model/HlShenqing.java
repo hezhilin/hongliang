@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by HE on 2017/9/21 0021.
@@ -42,19 +43,19 @@ public class HlShenqing {
     private int TTJieDuanLX;    //不区分比赛阶段，即单阶段类型  1 循环  2 淘汰
 
     @Column(name ="ttnan")
-    private int TTNan;  //团体男子
+    private int TTNan;  //团体男子  1
 
     @Column(name ="ttnanzu")
     private int TTNanZu;    //团体男子区分组别
 
     @Column(name ="ttnv")
-    private int TTNv;  //团体女子
+    private int TTNv;  //团体女子 1
 
     @Column(name ="ttnvzu")
     private int TTNvZu;    //团体女子区分组别
 
     @Column(name ="tthun")
-    private int TTHun;  //团体混合
+    private int TTHun;  //团体混合 1
 
     @Column(name ="tthunzu")
     private int TTHunZu;    //团体混合区分组别
@@ -76,8 +77,6 @@ public class HlShenqing {
 
     @Column(name ="ddnvzu")
     private int DDNvZu;    //单打女子区分组别
-
-
 
     @Column(name ="sdjieduan")
     private int SDJieDuan;  //0 双打不区分阶段  1 区分比赛阶段（第一阶段循环，第二阶段淘汰）
@@ -128,13 +127,15 @@ public class HlShenqing {
     @Column(name = "shi")
     private String shi;   //市
 
-
-    @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
-    @JoinTable(name = "hlShenqing_hlShenqings", joinColumns = @JoinColumn(name = "sq_id"), inverseJoinColumns = @JoinColumn(name = "sqs_id"))
-    private HlShenqings hlShenqings;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
+    @JoinColumn(name = "hlShenqing_id")
+    private List<HlShenqings> hlShenqings;
 
     public HlShenqing() {
+
     }
+
+
 
     public int getId() {
         return id;
@@ -352,11 +353,11 @@ public class HlShenqing {
         this.shi = shi;
     }
 
-    public HlShenqings getHlShenqings() {
+    public List<HlShenqings> getHlShenqings() {
         return hlShenqings;
     }
 
-    public void setHlShenqings(HlShenqings hlShenqings) {
+    public void setHlShenqings(List<HlShenqings> hlShenqings) {
         this.hlShenqings = hlShenqings;
     }
 
@@ -430,5 +431,48 @@ public class HlShenqing {
 
     public void setSDHunZu(int SDHunZu) {
         this.SDHunZu = SDHunZu;
+    }
+
+    @Override
+    public String toString() {
+        return "HlShenqing{" +
+                "id=" + id +
+                ", BeiMing='" + BeiMing + '\'' +
+                ", SaiZhi='" + SaiZhi + '\'' +
+                ", TuanTi=" + TuanTi +
+                ", DanDa=" + DanDa +
+                ", Shuang=" + Shuang +
+                ", TTJieDuan=" + TTJieDuan +
+                ", TTJieDuanLX=" + TTJieDuanLX +
+                ", TTNan=" + TTNan +
+                ", TTNanZu=" + TTNanZu +
+                ", TTNv=" + TTNv +
+                ", TTNvZu=" + TTNvZu +
+                ", TTHun=" + TTHun +
+                ", TTHunZu=" + TTHunZu +
+                ", DDJieDuan=" + DDJieDuan +
+                ", DDJieDuanLX=" + DDJieDuanLX +
+                ", DDNan=" + DDNan +
+                ", DDNanZu=" + DDNanZu +
+                ", DDNv=" + DDNv +
+                ", DDNvZu=" + DDNvZu +
+                ", SDJieDuan=" + SDJieDuan +
+                ", SDJieDuanLX=" + SDJieDuanLX +
+                ", SDNan=" + SDNan +
+                ", SDNanZu=" + SDNanZu +
+                ", SDNv=" + SDNv +
+                ", SDNvZu=" + SDNvZu +
+                ", SDHun=" + SDHun +
+                ", SDHunZu=" + SDHunZu +
+                ", SQSJ=" + SQSJ +
+                ", SQR=" + SQR +
+                ", SHSJ=" + SHSJ +
+                ", SHR=" + SHR +
+                ", Status=" + Status +
+                ", Memo='" + Memo + '\'' +
+                ", sheng='" + sheng + '\'' +
+                ", shi='" + shi + '\'' +
+                ", hlShenqings=" + hlShenqings +
+                '}';
     }
 }

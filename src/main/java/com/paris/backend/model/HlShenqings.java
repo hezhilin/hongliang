@@ -28,7 +28,8 @@ public class HlShenqings {
 
     }
 
-    public HlShenqings(String zuBie, int shuLiang) {
+    public HlShenqings(String leiBie, String zuBie, int shuLiang) {
+        this.leiBie = leiBie;
         ZuBie = zuBie;
         ShuLiang = shuLiang;
     }
@@ -39,6 +40,14 @@ public class HlShenqings {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getLeiBie() {
+        return leiBie;
+    }
+
+    public void setLeiBie(String leiBie) {
+        this.leiBie = leiBie;
     }
 
     public String getZuBie() {
