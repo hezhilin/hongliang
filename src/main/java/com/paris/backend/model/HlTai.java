@@ -34,9 +34,12 @@ public class HlTai {
     @Length(min = 2 ,max = 100)
     private String Memo;
 
-    @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
-    @JoinTable(name = "hlTai_hlCaipan", joinColumns = @JoinColumn(name = "tai_id"), inverseJoinColumns = @JoinColumn(name = "cp_id"))
-    private HlCaipan hlCaipan;
+    @Column(name = "cp_id1")
+    private int cp_id1;         //裁判1
+
+    @Column(name = "cp_id2")
+    private int cp_id2;         //裁判2
+
 
     public HlTai() {
     }
@@ -81,11 +84,27 @@ public class HlTai {
         Memo = memo;
     }
 
-    public HlCaipan getHlCaipan() {
-        return hlCaipan;
+    public int getSq_id() {
+        return sq_id;
     }
 
-    public void setHlCaipan(HlCaipan hlCaipan) {
-        this.hlCaipan = hlCaipan;
+    public void setSq_id(int sq_id) {
+        this.sq_id = sq_id;
+    }
+
+    public int getCp_id1() {
+        return cp_id1;
+    }
+
+    public void setCp_id1(int cp_id1) {
+        this.cp_id1 = cp_id1;
+    }
+
+    public int getCp_id2() {
+        return cp_id2;
+    }
+
+    public void setCp_id2(int cp_id2) {
+        this.cp_id2 = cp_id2;
     }
 }

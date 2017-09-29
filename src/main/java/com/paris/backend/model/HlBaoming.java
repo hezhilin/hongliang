@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by HE on 2017/9/22 0022.
@@ -54,17 +55,17 @@ public class HlBaoming {
     @Length(min = 2 ,max = 100)
     private String Memo;
 
-    @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
-    @JoinTable(name = "hlBaoming_hlBaomingJiaolian", joinColumns = @JoinColumn(name = "bm_id"), inverseJoinColumns = @JoinColumn(name = "bmjl_id"))
-    private HlBaomingJiaolian hlBaomingJiaolian;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
+    @JoinColumn(name = "hlBaoming_id")
+    private List<HlBaomingJiaolian> hlBaomingJiaolian;
 
-    @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
-    @JoinTable(name = "hlBaoming_hlBaomingYdy", joinColumns = @JoinColumn(name = "bm_id"), inverseJoinColumns = @JoinColumn(name = "bmydy_id"))
-    private HlBaomingYdy hlBaomingYdy;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
+    @JoinColumn(name = "hlBaoming_id")
+    private List<HlBaomingYdy> hlBaomingYdy;
 
-    @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
-    @JoinTable(name = "hlBaoming_hlBaomingShuang", joinColumns = @JoinColumn(name = "bm_id"), inverseJoinColumns = @JoinColumn(name = "bms_id"))
-    private HlBaomingShuang hlBaomingShuang;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
+    @JoinColumn(name = "hlBaoming_id")
+    private List<HlBaomingShuang> hlBaomingShuang;
 
     public HlBaoming() {
     }
@@ -165,27 +166,27 @@ public class HlBaoming {
         this.sq_id = sq_id;
     }
 
-    public HlBaomingJiaolian getHlBaomingJiaolian() {
+    public List<HlBaomingJiaolian> getHlBaomingJiaolian() {
         return hlBaomingJiaolian;
     }
 
-    public void setHlBaomingJiaolian(HlBaomingJiaolian hlBaomingJiaolian) {
+    public void setHlBaomingJiaolian(List<HlBaomingJiaolian> hlBaomingJiaolian) {
         this.hlBaomingJiaolian = hlBaomingJiaolian;
     }
 
-    public HlBaomingYdy getHlBaomingYdy() {
+    public List<HlBaomingYdy> getHlBaomingYdy() {
         return hlBaomingYdy;
     }
 
-    public void setHlBaomingYdy(HlBaomingYdy hlBaomingYdy) {
+    public void setHlBaomingYdy(List<HlBaomingYdy> hlBaomingYdy) {
         this.hlBaomingYdy = hlBaomingYdy;
     }
 
-    public HlBaomingShuang getHlBaomingShuang() {
+    public List<HlBaomingShuang> getHlBaomingShuang() {
         return hlBaomingShuang;
     }
 
-    public void setHlBaomingShuang(HlBaomingShuang hlBaomingShuang) {
+    public void setHlBaomingShuang(List<HlBaomingShuang> hlBaomingShuang) {
         this.hlBaomingShuang = hlBaomingShuang;
     }
 }

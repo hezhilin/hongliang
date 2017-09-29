@@ -3,19 +3,18 @@ package com.paris.backend.model;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
 
 /**
- * Created by HE on 2017/9/23 0023.
- * 分组赛程安排
+ * Created by HE on 2017/9/29 0029.
+ * 团队小组内赛程安排
  */
 @Entity
-@Table(name = "HlZuSaicheng")
-public class HlZuSaicheng {
+@Table(name = "")
+public class HlZuSaiChengs {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "sc_id")
+    @Column(name = "scs_id")
     private int id;
 
     @Column(name = "xuhao1")
@@ -29,21 +28,6 @@ public class HlZuSaicheng {
 
     @Column(name = "fangwei")
     private String fangwei;     //方位
-
-    @Column(name = "sc_rq")
-    private Date sc_rq;             //比赛日期
-
-    @Column(name = "sc_kssj")
-    @Length(min = 5, max = 10)
-    private String sc_kssj;         //比赛开始时间
-
-    @Column(name = "sc_jssj")
-    @Length(min = 5, max = 10)
-    private String sc_jssj;         //比赛结束时间
-
-    @Column(name = "sc_tai")
-    @Length(min = 1, max = 10)
-    private String sc_tai;          //比赛台号
 
     @Column(name = "sc_cj1")
     private int sc_cj1;     //成绩1
@@ -84,21 +68,6 @@ public class HlZuSaicheng {
     @Column(name = "win")
     private int win;      //获胜方序号
 
-    @Column(name = "cp_id")
-    private int cp_id;      //录入成绩的裁判ID
-
-    @Column(name = "qm_sheng")
-    private String qm_sheng;        //胜方签名
-
-    @Column(name = "qm_fu")
-    private String qm_fu;        //负方签名
-
-    @Column(name = "qm_caipan")
-    private String qm_caipan;        //裁判签名
-
-    @Column(name = "qm_caipanzhang")
-    private String qm_caipanzhang;        //裁判长签名
-
     @Column(name = "status")
     private int Status;     //状态  1 正常  2 异常
 
@@ -106,12 +75,7 @@ public class HlZuSaicheng {
     @Length(min = 2 ,max = 100)
     private String Memo;
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
-    @JoinColumn(name = "hlZuSaicheng_id")
-    private List<HlZuSaiChengs> hlZuSaiChengs;
-
-
-    public HlZuSaicheng() {
+    public HlZuSaiChengs() {
     }
 
     public int getId() {
@@ -152,38 +116,6 @@ public class HlZuSaicheng {
 
     public void setFangwei(String fangwei) {
         this.fangwei = fangwei;
-    }
-
-    public Date getSc_rq() {
-        return sc_rq;
-    }
-
-    public void setSc_rq(Date sc_rq) {
-        this.sc_rq = sc_rq;
-    }
-
-    public String getSc_kssj() {
-        return sc_kssj;
-    }
-
-    public void setSc_kssj(String sc_kssj) {
-        this.sc_kssj = sc_kssj;
-    }
-
-    public String getSc_jssj() {
-        return sc_jssj;
-    }
-
-    public void setSc_jssj(String sc_jssj) {
-        this.sc_jssj = sc_jssj;
-    }
-
-    public String getSc_tai() {
-        return sc_tai;
-    }
-
-    public void setSc_tai(String sc_tai) {
-        this.sc_tai = sc_tai;
     }
 
     public int getSc_cj1() {
@@ -288,46 +220,6 @@ public class HlZuSaicheng {
 
     public void setWin(int win) {
         this.win = win;
-    }
-
-    public int getCp_id() {
-        return cp_id;
-    }
-
-    public void setCp_id(int cp_id) {
-        this.cp_id = cp_id;
-    }
-
-    public String getQm_sheng() {
-        return qm_sheng;
-    }
-
-    public void setQm_sheng(String qm_sheng) {
-        this.qm_sheng = qm_sheng;
-    }
-
-    public String getQm_fu() {
-        return qm_fu;
-    }
-
-    public void setQm_fu(String qm_fu) {
-        this.qm_fu = qm_fu;
-    }
-
-    public String getQm_caipan() {
-        return qm_caipan;
-    }
-
-    public void setQm_caipan(String qm_caipan) {
-        this.qm_caipan = qm_caipan;
-    }
-
-    public String getQm_caipanzhang() {
-        return qm_caipanzhang;
-    }
-
-    public void setQm_caipanzhang(String qm_caipanzhang) {
-        this.qm_caipanzhang = qm_caipanzhang;
     }
 
     public int getStatus() {

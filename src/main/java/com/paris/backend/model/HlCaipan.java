@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by HE on 2017/9/22 0022.
@@ -85,9 +86,9 @@ public class HlCaipan {
     @Length(min = 2 ,max = 100)
     private String Memo;
 
-    @OneToOne(cascade = CascadeType.MERGE,orphanRemoval=true,fetch = FetchType.EAGER)
-    @JoinTable(name = "hlCaipan_hlCaipans", joinColumns = @JoinColumn(name = "cp_id"), inverseJoinColumns = @JoinColumn(name = "cps_id"))
-    private HlCaipans hlCaipans;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
+    @JoinColumn(name = "hlCaipan_id")
+    private List<HlCaipans> hlCaipans;
 
     public HlCaipan() {
     }
@@ -244,11 +245,11 @@ public class HlCaipan {
         Memo = memo;
     }
 
-    public HlCaipans getHlCaipans() {
+    public List<HlCaipans> getHlCaipans() {
         return hlCaipans;
     }
 
-    public void setHlCaipans(HlCaipans hlCaipans) {
+    public void setHlCaipans(List<HlCaipans> hlCaipans) {
         this.hlCaipans = hlCaipans;
     }
 }

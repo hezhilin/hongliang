@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by HE on 2017/9/23 0023.
@@ -23,19 +24,26 @@ public class HlZuYdy {
     @Column(name = "bm_id")
     private int bm_id;      //团体报名ID
 
+    @Column(name = "zhuke")
+    @Length(min = 2 ,max = 10)
+    private String zhuke;      //主队/客队
+
     @Column(name = "tt_name")
+    @Length(min = 2 ,max = 100)
     private String tt_name;     //队伍名称
 
     @Column(name = "user_id1")
     private int user_id1;        //运动员1  用户ID
 
     @Column(name = "user_name1")
+    @Length(min = 2 ,max = 20)
     private String user_name1;        //运动员1  用户名
 
     @Column(name = "user_id2")
     private int user_id2;        //运动员2  用户ID
 
     @Column(name = "user_name2")
+    @Length(min = 2 ,max = 20)
     private String user_name2;        //运动员2  用户名
 
     @Column(name = "status")
@@ -44,6 +52,11 @@ public class HlZuYdy {
     @Column(name ="memo")
     @Length(min = 2 ,max = 100)
     private String Memo;
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval=true,fetch = FetchType.LAZY)
+    @JoinColumn(name = "hlZuYdy_id")
+    private List<HlZuYdy> hlZuYdy;
+
 
     public HlZuYdy() {
     }
@@ -126,5 +139,13 @@ public class HlZuYdy {
 
     public void setMemo(String memo) {
         Memo = memo;
+    }
+
+    public String getZhuke() {
+        return zhuke;
+    }
+
+    public void setZhuke(String zhuke) {
+        this.zhuke = zhuke;
     }
 }

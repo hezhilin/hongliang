@@ -41,7 +41,78 @@ public class HlZuSaiPing {
     @Length(min = 2 ,max = 100)
     private String Memo;
 
+    public HlZuSaiPing() {
+    }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public int getSc_id() {
+        return sc_id;
+    }
+
+    public void setSc_id(int sc_id) {
+        this.sc_id = sc_id;
+    }
+
+    public int getXuhao() {
+        return xuhao;
+    }
+
+    public void setXuhao(int xuhao) {
+        this.xuhao = xuhao;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getJifen() {
+        return jifen;
+    }
+
+    public void setJifen(int jifen) {
+        this.jifen = jifen;
+    }
+
+    public Date getPing_sj() {
+        return ping_sj;
+    }
+
+    public void setPing_sj(Date ping_sj) {
+        this.ping_sj = ping_sj;
+    }
+
+    public int getPingjia() {
+        return pingjia;
+    }
+
+    public void setPingjia(int pingjia) {
+        this.pingjia = pingjia;
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int status) {
+        Status = status;
+    }
+
+    public String getMemo() {
+        return Memo;
+    }
+
+    public void setMemo(String memo) {
+        Memo = memo;
+    }
 }
