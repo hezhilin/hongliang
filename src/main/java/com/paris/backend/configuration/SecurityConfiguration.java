@@ -52,6 +52,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/newslist").permitAll()
 				.antMatchers("/news").permitAll()
 				.antMatchers("/newsclass").permitAll()
+				.antMatchers("/caipanlist").permitAll()
 				.anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
 				.loginPage("/login").failureUrl("/login?error=true")

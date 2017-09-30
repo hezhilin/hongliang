@@ -57,6 +57,32 @@ public class ApplyController {
         return modelAndView;
     }
 
+    // 比赛申请表审核列表页面
+    @RequestMapping(value = {"/shenqingsh"}, method = RequestMethod.GET)
+    public ModelAndView shenqingshlist() {
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        List<HlShenqing> hlShenqings = applyService.getAllHlShenqings();
+        modelAndView.addObject("hlShenqings", hlShenqings);
+
+        modelAndView.setViewName("shenqingsh");
+        return modelAndView;
+    }
+
+    // 可报名的比赛，报名入口
+    @RequestMapping(value = {"/baoming"}, method = RequestMethod.GET)
+    public ModelAndView bsbaominglist() {
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        List<HlShenqing> hlShenqings = applyService.getAllHlShenqings();
+        modelAndView.addObject("hlShenqings", hlShenqings);
+
+        modelAndView.setViewName("bsbaominglist");
+        return modelAndView;
+    }
+
     // 比赛申请表提交
     // post请求获取请求参数细节：参考博客：http://blog.csdn.net/qq_31001665/article/details/71075743
     @PostMapping(value = "/applySubmit")
