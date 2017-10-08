@@ -39,6 +39,14 @@ public class HlShenqing {
     @Column(name ="ttjieduan")
     private int TTJieDuan;  //0 团体不区分阶段  1 区分比赛阶段（第一阶段循环，第二阶段淘汰）
 
+    @Column(name = "ttshengzhi1")
+    @Length(min = 1,max = 10)
+    private String ttshengzhi1;      //团体一阶段比赛胜制   五局三胜，三局两胜，七局四胜
+
+    @Column(name = "ttshengzhi2")
+    @Length(min = 1,max = 10)
+    private String ttshengzhi2;      //团体一阶段比赛胜制   五局三胜，三局两胜，七局四胜
+
     @Column(name = "ttjieduanlx")
     private int TTJieDuanLX;    //不区分比赛阶段，即单阶段类型  1 循环  2 淘汰
 
@@ -63,6 +71,14 @@ public class HlShenqing {
     @Column(name ="ddjieduan")
     private int DDJieDuan;  //0 单打不区分阶段  1 区分比赛阶段（第一阶段循环，第二阶段淘汰）
 
+    @Column(name = "ddshengzhi1")
+    @Length(min = 1,max = 10)
+    private String ddshengzhi1;      //单打一阶段比赛胜制   五局三胜，三局两胜，七局四胜
+
+    @Column(name = "ddshengzhi2")
+    @Length(min = 1,max = 10)
+    private String ddshengzhi2;      //单打二阶段比赛胜制   五局三胜，三局两胜，七局四胜
+
     @Column(name = "ddjieduanlx")
     private int DDJieDuanLX;    //不区分比赛阶段，即单阶段类型  1 循环  2 淘汰
 
@@ -80,6 +96,14 @@ public class HlShenqing {
 
     @Column(name ="sdjieduan")
     private int SDJieDuan;  //0 双打不区分阶段  1 区分比赛阶段（第一阶段循环，第二阶段淘汰）
+
+    @Column(name = "sdshengzhi1")
+    @Length(min = 1,max = 10)
+    private String sdshengzhi1;      //双打一阶段比赛胜制   五局三胜，三局两胜，七局四胜
+
+    @Column(name = "sdshengzhi2")
+    @Length(min = 1,max = 10)
+    private String sdshengzhi2;      //双打二阶段比赛胜制   五局三胜，三局两胜，七局四胜
 
     @Column(name = "sdjieduanlx")
     private int SDJieDuanLX;    //不区分比赛阶段，即单阶段类型  1 循环  2 淘汰

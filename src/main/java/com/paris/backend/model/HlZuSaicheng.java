@@ -1,5 +1,6 @@
 package com.paris.backend.model;
 
+import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -12,11 +13,18 @@ import java.util.List;
  */
 @Entity
 @Table(name = "HlZuSaicheng")
+@Data
 public class HlZuSaicheng {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "sc_id")
     private int id;
+
+    @Column(name = "jieduan")
+    private int jieduan;      //阶段
+
+    @Column(name = "xuhao")
+    private int xuhao;      //序号
 
     @Column(name = "xuhao1")
     private int xuhao1;      //小组内序号1
@@ -80,6 +88,18 @@ public class HlZuSaicheng {
 
     @Column(name = "sc_cj52")
     private int sc_cj52;     //5局成绩
+
+    @Column(name = "sc_cj61")
+    private int sc_cj61;     //6局成绩
+
+    @Column(name = "sc_cj62")
+    private int sc_cj62;     //6局成绩
+
+    @Column(name = "sc_cj71")
+    private int sc_cj71;     //7局成绩
+
+    @Column(name = "sc_cj72")
+    private int sc_cj72;     //7局成绩
 
     @Column(name = "win")
     private int win;      //获胜方序号

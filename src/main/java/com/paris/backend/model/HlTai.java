@@ -37,9 +37,14 @@ public class HlTai {
     @Column(name = "cp_id1")
     private int cp_id1;         //裁判1
 
+    @Column(name = "cp_name1")
+    private int cp_name1;         //裁判1
+
     @Column(name = "cp_id2")
     private int cp_id2;         //裁判2
 
+    @Column(name = "cp_name2")
+    private int cp_name2;         //裁判2
 
     public HlTai() {
     }

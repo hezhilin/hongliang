@@ -65,6 +65,18 @@ public class HlZuSaiChengs {
     @Column(name = "sc_cj52")
     private int sc_cj52;     //5局成绩
 
+    @Column(name = "sc_cj61")
+    private int sc_cj61;     //6局成绩
+
+    @Column(name = "sc_cj62")
+    private int sc_cj62;     //6局成绩
+
+    @Column(name = "sc_cj71")
+    private int sc_cj71;     //7局成绩
+
+    @Column(name = "sc_cj72")
+    private int sc_cj72;     //7局成绩
+
     @Column(name = "win")
     private int win;      //获胜方序号
 
